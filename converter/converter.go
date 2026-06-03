@@ -4,76 +4,76 @@ import "strings"
 
 func StringToArt(input string) string {
 	digits := map[rune][]string{
-		'0' : []string{
+		'0' : {
 			" ___ ",
-			" |  | ",
-			" |  | ",
-			" |  | ",
-			" |__| ",
+			" | | ",
+			" | | ",
+			" | | ",
+			" |_| ",
 		},
-		'1' : []string{
+		'1' : {
 			"  |  ",
 			"  |  ",
 			"  |  ",
 			"  |  ",
 			"  |  ",
 		},
-		'2' : []string{
+		'2' : {
 			" ___ ",
-			" |  | ",
-			" __ | ",
-			" |    ",
-			" |__| ",
+			" | | ",
+			" _ | ",
+			" |   ",
+			" |_| ",
 		},
-		'3' : []string{
+		'3' : {
 			" ___ ",
-			"    | ",
-			"  __| ",
-			"    | ",
-			"  __| ",		
+			"   | ",
+			" __| ",
+			"   | ",
+			" __| ",		
 		
 		},
-		'4' :  []string{
+		'4' :  {
 			" | | ",
 			" |_|_",
 			"   | ",
 			"	| ",
 			"	  ",
 		},
-		'5' : []string{
+		'5' : {
 			" ___ ",
-			" |    ",
-			" |___ ",
-			"    | ",
-			" ___| ",
+			" |   ",
+			" |__ ",
+			"   | ",
+			" __| ",
 		},
-		'6' : []string{
+		'6' : {
 			" ___ ",
-			" |    ",
-			" |___ ",
-			" |  | ",
-			" |__| ",
+			" |   ",
+			" |__ ",
+			" | | ",
+			" |_| ",
 		},
-		'7' : []string{
+		'7' : {
 			" ___ ",
 			"   | ",
 			"	| ",
 			"	| ",
 			"	| ",
 		},
-		'8' : []string{
+		'8' : {
 			" ___ ",
-			" |  | ",
-			" |__| ",
-			" |  | ",
-			" |__| ",
+			" | | ",
+			" |_| ",
+			" | | ",
+			" |_| ",
 		},
-		'9' : []string{
+		'9' : {
 			" ___ ",
-			" |  | ",
-			" |__| ",
-			"    | ",
-			"    | ",
+			" | | ",
+			" |_| ",
+			"   | ",
+			"   | ",
 		},
 
 	}
@@ -89,13 +89,12 @@ func StringToArt(input string) string {
 				return ""
 			}
 		}
-	
-	for row := 0; row < 5; row++ {
-		for _, c := range line {
-			result.WriteString(digits[c][row])
+		for row := 0; row < 5; row++ {
+			for _, c := range line {
+				result.WriteString(digits[c][row])
+			}
+			result.WriteString("\n")
 		}
-		result.WriteString("\n")
-	}
 	}
 	return result.String()
 }

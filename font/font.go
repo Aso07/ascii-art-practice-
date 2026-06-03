@@ -1,6 +1,6 @@
 package font
 
-func GenerateFont() map[rune][]string {
+func GenerateFont() map[rune][]string{
 	font := make(map[rune][]string)
 
 	for c := rune(32); c <= rune(126); c++ {

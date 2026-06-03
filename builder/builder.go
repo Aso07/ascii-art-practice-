@@ -6,16 +6,13 @@ type ArtBuilder struct {
 	text string
 	style string
 }
-
 func NewArtBuilder() *ArtBuilder {
 	return &ArtBuilder{}
 }
-
-func (box *ArtBuilder) AddText(text string) *ArtBuilder {
+func (box *ArtBuilder) AddText(text string) * ArtBuilder {
 	box.text += text
 	return box
 }
-
 func (box *ArtBuilder) SetStyle(style string) *ArtBuilder {
 	validStyles := map[string]bool{
 		"normal": true, "bold": true, "italic": true, "outline": true,
